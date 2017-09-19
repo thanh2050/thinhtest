@@ -1,3 +1,5 @@
+package services;
+
 public class StringUtility {
 
     public static int NumberTimeAppearance(String parrent, String child)
@@ -54,6 +56,20 @@ public class StringUtility {
                     }
                 }
             }
+        }
+        catch (Exception ex)
+        {
+            // log error
+        }
+        return result;
+    }
+
+    public static boolean IsSymmetry(String input)
+    {
+        boolean result = false;
+        try
+        {
+
         }
         catch (Exception ex)
         {

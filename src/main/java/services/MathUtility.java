@@ -5,7 +5,7 @@ public class MathUtility {
 
     public static ResultValue GetOutputQuadraticEquation(int a, int b, int c)
     {
-        ResultValue result = null;
+        ResultValue result = new ResultValue();
         try
         {
             // ly thuyet
@@ -27,16 +27,28 @@ public class MathUtility {
 
 
              */
+
+            // làm sao biết từ phương trình bậc hai là từ Quadratic Equation. nhập cụm từ phương trình bậc 2 vào google dịch hay
+            // nhập "phương trình bậc hai tiếng anh" vào google search
+            // có thể tìm cách làm bằng cách search theo từ khóa Quadratic Equation java , chọn 1 kết quả mình thích rồi test lại.
             double dis = Math.sqrt(b*b-4*a*c);
 
             if(dis > 0)
             {
                 double c1=(-b+dis)/(2*a);
-                double c2=(+b+dis)/(2*a);
+                double c2=(-b-dis)/(2*a);
 
                 // gan gia trị cho biến kết quả trả về
                 result.Value1 = c1;
                 result.Value2 = c2;
+            }
+            else if(dis == 0)
+            {
+                result.Value1 = result.Value2 = -b / 2*a;
+            }
+            else
+            {
+                result = null;
             }
 
         }
